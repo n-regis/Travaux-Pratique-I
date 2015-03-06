@@ -1,0 +1,41 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package modele;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+/**
+ *
+ * @author 1495765
+ */
+public class ListeMembres {
+     static  ArrayList<Membres> liste = new  ArrayList<Membres>();
+
+    public ListeMembres() {
+    }
+
+    public static  void ajouterMembres(Membres out) {
+      liste.add(out);
+    }
+
+   
+ 
+    public   static ArrayList getListeMembres() {
+        return liste;
+    }
+
+    public static void listerMembres(){
+    
+    Iterator iterateur = liste.iterator();
+    
+    while(iterateur.hasNext()){
+        System.out.println((Membres) iterateur.next());
+    }
+    }
+    
+    
+    
+}
