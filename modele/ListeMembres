@@ -1,2 +1,41 @@
 
-/* */
+/*
+ * travaux pratique système de gestion des fleuristes
+ * @author Nganha Regis Eric
+ * date: 2015/02/28
+ * version: 2.00
+ */
+package modele;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+/**
+ *
+ * clase pour stocker les resultats de requetes
+ */
+public class ListeMembres {
+
+    static ArrayList<Membres> liste = new ArrayList<Membres>();
+
+    public ListeMembres() {
+    }
+
+    public static void ajouterMembres(Membres out) {
+        liste.add(out);
+    }
+
+    public static ArrayList getListeMembres() {
+        return liste;
+    }
+
+    public static void listerMembres() {
+
+        Iterator iterateur = liste.iterator();
+
+        while (iterateur.hasNext()) {
+            System.out.println((Membres) iterateur.next());
+        }
+    }
+}
+
