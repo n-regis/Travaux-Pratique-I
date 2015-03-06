@@ -1,1 +1,50 @@
 
+/*
+ *  travaux pratique système de gestion des fleuristes
+ * @author Nganha Regis Eric
+ * date: 2015/02/28
+ * version: 2.00
+ */
+package modele;
+
+import java.util.ArrayList;
+import javax.swing.table.AbstractTableModel;
+
+/**
+ *
+ * @author 1495765
+ */
+public class TableModelSpecial extends AbstractTableModel {
+
+    private ArrayList<Membres> liste;
+    private String[] columnNames = {"Code", "Nom", "Prénom"};
+    //,"Adresse","Statut","Revenue Annuel"};
+
+    public TableModelSpecial(ArrayList<Membres> liste) {
+        this.liste = liste;
+    }
+
+    public String getColumnName(int column) {
+        return columnNames[column];
+    }
+
+    public int getColumnCount() {
+        return columnNames.length;
+    }
+
+    public int getRowCount() {
+        return liste.size();
+    }
+
+    public Object getValueAt(int rowIndex, int columnIndex) {
+
+        if (columnIndex == 0) {
+            return liste.get(rowIndex).getCode();
+        } else if (columnIndex == 1) {
+            return liste.get(rowIndex).getNom();
+        } else if (columnIndex == 2) {
+            return liste.get(rowIndex).getPrenom();
+        }
+        return null;
+    }
+}
